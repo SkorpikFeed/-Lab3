@@ -1,0 +1,48 @@
+﻿<Window x:Class="Lab_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab_3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="453" Width="550" ResizeMode ="NoResize"  KeyDown="Window_KeyDown">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="159*"/>
+            <ColumnDefinition Width="101*"/>
+            <ColumnDefinition Width="218*"/>
+        </Grid.ColumnDefinitions>
+        <ToolBar Grid.Column="2" Grid.Row="0" Margin="20,0,20,149">
+            <Button x:Name="Tool_Message" Width="37" Height="37" Margin="7,0,7,0" Click="Message_Click">
+                <Image Source="C:\Users\Taras\Downloads\Дизайн без названия (1)\2.png" Height="32" Width="32" />
+            </Button>
+            <CheckBox x:Name="Tool_Chcek" Width="37" Height="37" Margin="7,0,7,0" Click="Check_Click" IsChecked="True">
+                <Image Source="C:\Users\Taras\Downloads\Дизайн без названия (1)\4.png" Height="32" Width="32" />
+            </CheckBox>
+            <Button x:Name="Tool_Exit" Width="37" Height="37" Margin="7,0,7,0" Click="Exit_Click">
+                <Image Source="C:\Users\Taras\Downloads\Дизайн без названия (1)\3.png" Height="32" Width="32" />
+            </Button>
+        </ToolBar>
+        <Menu x:Name="Menu" Grid.ColumnSpan="2" Margin="0,20,0,0" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <MenuItem Header="File" BorderBrush="Black" FontFamily="Cascadia Code Light" FontSize="18" Width="100">
+                <MenuItem x:Name="Message" Header="Message" Click="Message_Click"/>
+                <MenuItem x:Name="Check" Header="Check" Click="Check_Click" IsChecked="True" IsCheckable="True"/>
+                <MenuItem x:Name="Exit" Header="Exit" Click="Exit_Click" />
+            </MenuItem>
+            <MenuItem x:Name="Help" Header="Help" BorderBrush="Black" FontSize="18" FontFamily="Cascadia Code Light" Width="100" Height="25">
+                <MenuItem x:Name="About" Header="About" Click="About_Click"/>
+            </MenuItem>
+        </Menu>
+    </Grid>
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem x:Name="Context_Message" Header="Message" Click="Message_Click" />
+            <MenuItem x:Name="Context_Check" Header="Check" IsChecked="True" IsCheckable="True" Click="Check_Click"/>
+            <MenuItem x:Name="Context_Exit" Header="Exit" Click="Exit_Click"/>
+        </ContextMenu>
+    </Window.ContextMenu>
+</Window>
